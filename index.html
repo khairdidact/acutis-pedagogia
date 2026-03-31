@@ -266,13 +266,10 @@
       display: flex; align-items: center; justify-content: center;
       position: relative;
     }
-    .about-portrait-placeholder {
-      text-align: center; color: rgba(255,255,255,.6);
+    .about-portrait-inner img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center top;
+      display: block;
     }
-    .about-portrait-placeholder .avatar-icon {
-      font-size: 5rem; display: block; margin-bottom: .5rem; opacity: .8;
-    }
-    .about-portrait-placeholder p { font-size: .85rem; }
     .about-portrait-badge {
       position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%);
       background: #fff;
@@ -694,17 +691,14 @@
         <div class="about-portrait">
           <div class="about-portrait-frame">
             <div class="about-portrait-inner">
-              <div class="about-portrait-placeholder">
-                <span class="avatar-icon">👤</span>
-                <p>Tu fotografía aquí</p>
-              </div>
+              <img src="Photo_JBK.jpeg" alt="Jean Baptiste Khair Rodríguez — Fundador del CIPA" />
             </div>
           </div>
           <div class="about-portrait-badge">
             <span class="badge-icon">🎓</span>
             <div>
-              <strong>Ingeniero Pedagógico</strong>
-              <span>Especialista en Innovación Educativa</span>
+              <strong>Jean Baptiste Khair Rodríguez</strong>
+              <span>Ingeniero Pedagógico · Fundador del CIPA</span>
             </div>
           </div>
         </div>
@@ -936,7 +930,7 @@
             <div class="contact-item-icon">✉️</div>
             <div class="contact-item-text">
               <strong>Correo electrónico</strong>
-              <span>contacto@acutis-pedagogia.pe</span>
+              <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="82e1edecf6e3e1f6edc2e3e1f7f6ebf1aff2e7e6e3e5ede5ebe3acf2e7">[email&#160;protected]</a></span>
             </div>
           </div>
           <div class="contact-item">
@@ -1057,7 +1051,7 @@
 </footer>
 
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // ── Nav scroll effect ──
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
@@ -1083,13 +1077,4 @@
   }, { threshold: 0.12 });
   reveals.forEach(el => observer.observe(el));
 
-  // ── Contact form (front-end demo) ──
-  function handleSubmit(e) {
-    e.preventDefault();
-    document.getElementById('contactForm').style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
-  }
-</script>
-
-</body>
-</html>
+  // ── Contact form (fro
