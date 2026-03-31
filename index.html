@@ -561,10 +561,13 @@
 
     /* ─── Scroll animations ─── */
     .reveal {
-      opacity: 0; transform: translateY(30px);
+      opacity: 1; transform: translateY(0);
       transition: opacity .7s ease, transform .7s ease;
     }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .js-ready .reveal {
+      opacity: 0; transform: translateY(30px);
+    }
+    .js-ready .reveal.visible { opacity: 1; transform: translateY(0); }
     .reveal-delay-1 { transition-delay: .1s; }
     .reveal-delay-2 { transition-delay: .2s; }
     .reveal-delay-3 { transition-delay: .3s; }
@@ -1069,12 +1072,13 @@
   });
 
   // ── Scroll reveal ──
+  document.body.classList.add('js-ready');
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add('visible'); }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.08 });
   reveals.forEach(el => observer.observe(el));
 
   // ── Contact form (fro
