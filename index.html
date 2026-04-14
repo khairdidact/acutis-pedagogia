@@ -955,12 +955,26 @@
         <span class="tag contact-tag">Contacto</span>
         <h2 class="section-title" style="color:var(--inca-blue);">¿Cómo puedo<br/><em style="font-style:italic; color:var(--terra);">ayudarte?</em></h2>
         <p class="section-lead">Escríbeme sin compromiso. Todo el apoyo es gratuito y está orientado únicamente a mejorar el aprendizaje.</p>
+
+        <!-- Botón Gmail directo — funciona en cualquier contexto -->
+        <a href="https://mail.google.com/mail/?view=cm&to=khairdidact@gmail.com&su=Consulta%20CIPCA%20Carlo%20Acutis"
+           target="_blank" rel="noopener"
+           class="btn btn-primary"
+           style="margin-bottom:1.75rem; font-size:1rem; padding:.9rem 2rem;">
+          ✉️ Escribirme directamente en Gmail
+        </a>
+
         <div class="contact-info">
           <div class="contact-item">
             <div class="contact-item-icon">✉️</div>
             <div class="contact-item-text">
               <strong>Correo electrónico</strong>
-              <span><a href="mailto:khairdidact@gmail.com" style="color:var(--gold);">khairdidact@gmail.com</a></span>
+              <span>
+                <a href="https://mail.google.com/mail/?view=cm&to=khairdidact@gmail.com&su=Consulta%20CIPCA"
+                   target="_blank" rel="noopener" style="color:var(--gold); font-weight:700;">
+                  <span class="__cf_email__" data-cfemail="b8d3d0d9d1cadcd1dcd9dbccf8dfd5d9d1d496dbd7d5">[email&#160;protected]</span>
+                </a>
+              </span>
             </div>
           </div>
           <div class="contact-item">
@@ -986,11 +1000,17 @@
           </div>
         </div>
       </div>
+
       <div class="reveal reveal-delay-1">
         <div class="contact-form">
           <h3 class="form-title">Envíame un mensaje</h3>
-          <p class="form-subtitle">Cuéntame tu situación y cómo puedo apoyarte.</p>
-          <form id="contactForm" onsubmit="handleSubmit(event)">
+          <p class="form-subtitle">Rellena el formulario y lo recibiré directamente en mi correo.</p>
+          <form id="contactForm"
+                action="https://forms.un-static.com/forms/3b4e23dfcaa439ad4de975268f4327683aadf03fde38a71b50d957fd"
+                method="POST">
+            <input type="hidden" name="_replyto" value="" />
+            <input type="hidden" name="_subject" value="Nuevo mensaje CIPCA Carlo Acutis" />
+            <input type="hidden" name="_redirect" value="https://khairdidact.github.io/acutis-pedagogia/" />
             <div class="form-row">
               <div class="form-group">
                 <label for="nombre">Nombre</label>
@@ -998,18 +1018,18 @@
               </div>
               <div class="form-group">
                 <label for="email">Correo electrónico</label>
-                <input type="email" id="email" name="email" placeholder="tu@correo.com" required />
+                <input type="email" id="email" name="_replyto" placeholder="tu@correo.com" required />
               </div>
             </div>
             <div class="form-group">
               <label for="perfil">Soy…</label>
               <select id="perfil" name="perfil" required>
                 <option value="">Selecciona tu perfil</option>
-                <option value="docente">Docente de secundaria</option>
-                <option value="estudiante">Estudiante de secundaria</option>
-                <option value="padre">Padre / Madre de familia</option>
-                <option value="directivo">Directivo de institución educativa</option>
-                <option value="otro">Otro</option>
+                <option value="Docente de secundaria">Docente de secundaria</option>
+                <option value="Estudiante de secundaria">Estudiante de secundaria</option>
+                <option value="Padre / Madre de familia">Padre / Madre de familia</option>
+                <option value="Directivo de IE">Directivo de institución educativa</option>
+                <option value="Otro">Otro</option>
               </select>
             </div>
             <div class="form-group">
@@ -1081,7 +1101,7 @@
 </footer>
 
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // ── Nav scroll effect ──
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
@@ -1117,14 +1137,4 @@
     const perfil  = document.getElementById('perfil').value;
     const asunto  = document.getElementById('asunto').value;
     const mensaje = document.getElementById('mensaje').value;
-    const cuerpo  = `Nombre: ${nombre}\nCorreo: ${email}\nPerfil: ${perfil}\n\n${mensaje}`;
-    const mailtoURL = `mailto:khairdidact@gmail.com?subject=CIPCA%20-%20${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
-    window.location.href = mailtoURL;
-    setTimeout(() => {
-      document.getElementById('contactForm').style.display = 'none';
-      document.getElementById('formSuccess').style.display = 'block';
-    }, 500);
-  }
-</script>
-</body>
-</html>
+    const cuerpo  = `No
