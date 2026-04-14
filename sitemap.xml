@@ -1,107 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-    <loc>https://khairdidact.github.io/acutis-pedagogia/</loc>
-    <lastmod>2025-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- Docentes -->
-  <url>
-    <loc>https://khairdidact.github.io/acutis-pedagogia/canva-education.html</loc>
-    <lastmod>2025-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://khairdidact.github.io/acutis-pedagogia/aula-invertida-edpuzzle.html</loc>
-    <lastmod>2025-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://khairdidact.github.io/acutis-pedagogia/evaluacion-sin-notas.html</loc>
-    <lastmod>2025-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://khairdidact.github.io/acutis-pedagogia/abp-real.html</loc>
-    <lastmod>2025-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://khairdidact.github.io/acutis-pedagogia/gamificacion-sin-laboratorio.html</loc>
-    <lastmod>2025-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Estudiantes -->
-  <url>
-    <loc>https://khairdidact.github.io/acutis-pedagogia/cornell-mapa-mental.html</loc>
-    <lastmod>2025-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://khairdidact.github.io/acutis-pedagogia/tecnica-sq3r.html</loc>
-    <lastmod>2025-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://khairdidact.github.io/acutis-pedagogia/geogebra-matematicas.html</loc>
-    <lastmod>2025-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://khairdidact.github.io/acutis-pedagogia/time-blocking.html</loc>
-    <lastmod>2025-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://khairdidact.github.io/acutis-pedagogia/pensamiento-critico-redes.html</loc>
-    <lastmod>2025-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Padres y Madres -->
-  <url>
-    <loc>https://khairdidact.github.io/acutis-pedagogia/regla-20-minutos.html</loc>
-    <lastmod>2025-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://khairdidact.github.io/acutis-pedagogia/reunion-padres-efectiva.html</loc>
-    <lastmod>2025-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://khairdidact.github.io/acutis-pedagogia/contrato-familiar-pantallas.html</loc>
-    <lastmod>2025-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://khairdidact.github.io/acutis-pedagogia/rincon-estudio.html</loc>
-    <lastmod>2025-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://khairdidact.github.io/acutis-pedagogia/senales-alerta-temprana.html</loc>
-    <lastmod>2025-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
+<url><loc>https://khairdidact.github.io/acutis-pedagogia/</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+<url><loc>https://khairdidact.github.io/acutis-pedagogia/canva-education.html</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://khairdidact.github.io/acutis-pedagogia/aula-invertida-edpuzzle.html</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://khairdidact.github.io/acutis-pedagogia/evaluacion-sin-notas.html</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://khairdidact.github.io/acutis-pedagogia/abp-real.html</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://khairdidact.github.io/acutis-pedagogia/gamificacion-sin-laboratorio.html</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://khairdidact.github.io/acutis-pedagogia/cornell-mapa-mental.html</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://khairdidact.github.io/acutis-pedagogia/tecnica-sq3r.html</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://khairdidact.github.io/acutis-pedagogia/geogebra-matematicas.html</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://khairdidact.github.io/acutis-pedagogia/time-blocking.html</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://khairdidact.github.io/acutis-pedagogia/pensamiento-critico-redes.html</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://khairdidact.github.io/acutis-pedagogia/regla-20-minutos.html</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://khairdidact.github.io/acutis-pedagogia/reunion-padres-efectiva.html</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://khairdidact.github.io/acutis-pedagogia/contrato-familiar-pantallas.html</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://khairdidact.github.io/acutis-pedagogia/rincon-estudio.html</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://khairdidact.github.io/acutis-pedagogia/senales-alerta-temprana.html</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
