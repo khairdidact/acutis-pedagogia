@@ -960,7 +960,7 @@
             <div class="contact-item-icon">✉️</div>
             <div class="contact-item-text">
               <strong>Correo electrónico</strong>
-              <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="82e1edecf6e3e1f6edc2e3e1f7f6ebf1aff2e7e6e3e5ede5ebe3acf2e7">[email&#160;protected]</a></span>
+              <span><a href="mailto:khairdidact@gmail.com" style="color:var(--gold);">khairdidact@gmail.com</a></span>
             </div>
           </div>
           <div class="contact-item">
@@ -1108,4 +1108,23 @@
   }, { threshold: 0.08 });
   reveals.forEach(el => observer.observe(el));
 
-  // ── Contact form (fro
+  
+  // ── Contact form — envío por mailto ──
+  function handleSubmit(e) {
+    e.preventDefault();
+    const nombre  = document.getElementById('nombre').value;
+    const email   = document.getElementById('email').value;
+    const perfil  = document.getElementById('perfil').value;
+    const asunto  = document.getElementById('asunto').value;
+    const mensaje = document.getElementById('mensaje').value;
+    const cuerpo  = `Nombre: ${nombre}\nCorreo: ${email}\nPerfil: ${perfil}\n\n${mensaje}`;
+    const mailtoURL = `mailto:khairdidact@gmail.com?subject=CIPCA%20-%20${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+    window.location.href = mailtoURL;
+    setTimeout(() => {
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    }, 500);
+  }
+</script>
+</body>
+</html>
