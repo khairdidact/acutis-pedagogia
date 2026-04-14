@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Time Blocking Semanal – CIPCA Carlo Acutis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+<style>
+
+:root{--gold:#C9882A;--gold-light:#E8B860;--terra:#A63D2F;--terra-deep:#7A2318;--inca-blue:#1B3A5C;--cream:#FDF6EC;--warm-white:#FFFBF4;--charcoal:#2A2119;--muted:#7A6A58;--radius:18px;--transition:0.35s cubic-bezier(0.4,0,0.2,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--warm-white);color:var(--charcoal);font-family:'Nunito',sans-serif;font-weight:400;line-height:1.75;overflow-x:hidden}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--cream)}::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
+.container{max-width:1080px;margin-inline:auto;padding-inline:1.5rem}
+a{color:var(--gold);text-decoration:none}a:hover{text-decoration:underline}
+h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.2}
+h2{font-size:clamp(1.7rem,3.5vw,2.5rem);color:var(--inca-blue);margin-bottom:1rem}
+h3{font-size:1.2rem;color:var(--inca-blue);margin-bottom:.5rem}
+p{margin-bottom:1rem;color:var(--charcoal)}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .9rem;border-radius:100px;margin-bottom:1rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.6rem;border-radius:100px;font-family:'Nunito',sans-serif;font-weight:700;font-size:.92rem;cursor:pointer;text-decoration:none;transition:var(--transition);border:none}
+.btn-primary{background:var(--gold);color:#fff;box-shadow:0 4px 18px rgba(201,136,42,.3)}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);text-decoration:none}
+.btn-back{background:rgba(27,58,92,.08);color:var(--inca-blue);border:1.5px solid rgba(27,58,92,.2)}
+.btn-back:hover{background:var(--inca-blue);color:#fff;text-decoration:none}
+nav{position:sticky;top:0;z-index:100;padding:.9rem 0;background:rgba(253,246,236,.93);backdrop-filter:blur(16px);border-bottom:1px solid rgba(201,136,42,.15);box-shadow:0 2px 16px rgba(42,33,25,.07)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none}
+.nav-logo-icon{width:38px;height:38px;border-radius:9px;background:linear-gradient(135deg,var(--terra),var(--gold));display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:#fff;font-weight:900;font-family:'Playfair Display',serif}
+.nav-logo-text{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--inca-blue);line-height:1.2}
+.nav-logo-text span{display:block;font-size:.68rem;font-weight:400;color:var(--muted);font-family:'Nunito',sans-serif}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{text-decoration:none;color:var(--charcoal);font-weight:600;font-size:.88rem;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.nav-burger span{width:24px;height:2px;background:var(--charcoal);border-radius:2px}
+/* HERO */
+.page-hero{padding:4rem 0 3rem;position:relative;overflow:hidden}
+.hero-emoji{font-size:4rem;display:block;margin-bottom:1rem;line-height:1}
+.page-hero h1{font-size:clamp(2rem,5vw,3.5rem);margin-bottom:1rem}
+.page-hero .lead{font-size:1.15rem;color:var(--muted);max-width:65ch;margin-bottom:1.75rem}
+.breadcrumb{font-size:.8rem;color:var(--muted);margin-bottom:1.5rem;display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
+.breadcrumb a{color:var(--muted);text-decoration:none}
+.breadcrumb a:hover{color:var(--gold)}
+/* SECTIONS */
+.section{padding:3.5rem 0}
+.section-alt{background:var(--cream)}
+.section-dark{background:linear-gradient(145deg,var(--inca-blue),#0E2440);color:#fff}
+.section-dark h2,.section-dark h3{color:var(--gold-light)}
+.section-dark p{color:rgba(255,255,255,.82)}
+.section-dark .step-num{background:var(--gold)}
+/* STEPS */
+.steps{display:flex;flex-direction:column;gap:1.5rem;margin-top:1.5rem}
+.step{display:flex;gap:1.25rem;align-items:flex-start;background:#fff;border-radius:var(--radius);padding:1.5rem;border:1.5px solid rgba(201,136,42,.1);transition:var(--transition)}
+.step:hover{border-color:var(--gold);box-shadow:0 6px 24px rgba(201,136,42,.12);transform:translateX(4px)}
+.step-num{width:42px;height:42px;border-radius:50%;background:var(--inca-blue);color:#fff;font-family:'Playfair Display',serif;font-weight:700;font-size:1.1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step-body h3{margin-bottom:.35rem}
+.step-body p{margin-bottom:0;font-size:.92rem;color:var(--muted)}
+/* LINKS */
+.links-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem;margin-top:1.5rem}
+.link-card{background:#fff;border-radius:var(--radius);padding:1.5rem;border:1.5px solid rgba(201,136,42,.12);transition:var(--transition)}
+.link-card:hover{border-color:var(--gold);box-shadow:0 6px 24px rgba(201,136,42,.14);transform:translateY(-4px)}
+.link-card .lc-icon{font-size:2rem;margin-bottom:.75rem;display:block}
+.link-card h3{font-size:1rem;margin-bottom:.4rem}
+.link-card p{font-size:.83rem;color:var(--muted);margin-bottom:.9rem}
+.link-card a{font-size:.82rem;font-weight:700;color:var(--gold)}
+/* TIPS */
+.tips{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.1rem;margin-top:1.5rem}
+.tip{background:#fff;border-radius:14px;padding:1.25rem;border-left:4px solid var(--gold)}
+.tip .tip-icon{font-size:1.5rem;margin-bottom:.5rem;display:block}
+.tip p{font-size:.87rem;color:var(--muted);margin-bottom:0}
+/* HIGHLIGHT BOX */
+.highlight{background:linear-gradient(135deg,rgba(201,136,42,.1),rgba(166,61,47,.08));border-radius:16px;padding:1.75rem;border:1.5px solid rgba(201,136,42,.2);margin:1.5rem 0}
+.highlight p{margin-bottom:0;font-style:italic;font-size:1rem;color:var(--inca-blue)}
+/* ILLUSTRATION placeholder */
+.illus{width:100%;border-radius:16px;overflow:hidden;margin:1.5rem 0;background:linear-gradient(145deg,var(--inca-blue),#0E2440);padding:2.5rem;text-align:center;color:rgba(255,255,255,.7);font-size:.88rem}
+.illus .big{font-size:4rem;display:block;margin-bottom:.5rem}
+/* FOOTER */
+footer{background:var(--charcoal);color:rgba(255,255,255,.6);padding:2rem 0;margin-top:0}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.82rem}
+.footer-inner a{color:var(--gold-light)}
+/* MOBILE */
+@media(max-width:768px){
+  .nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--cream);padding:1.5rem;gap:1.25rem;border-bottom:1px solid rgba(201,136,42,.2)}
+  .nav-links.open{display:flex}
+  .nav-burger{display:flex}
+  nav{position:relative}
+  .links-grid,.tips{grid-template-columns:1fr}
+}
+
+.page-hero{background:linear-gradient(145deg,#1a4a3a,#2d7a5f);}
+.hero-tag{background:#1a4a3a;color:#fff;}
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon">A</div>
+      <div class="nav-logo-text">CIPCA · Carlo Acutis<span>Centro de Innovación Pedagógica</span></div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#sobre">Sobre mí</a></li>
+      <li><a href="index.html#audiencias">¿Para quién?</a></li>
+      <li><a href="index.html#recursos">Recursos</a></li>
+      <li><a href="index.html#metodologia">Metodología</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+    <button class="nav-burger" id="navBurger" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Inicio</a> ›
+      <a href="index.html#audiencias">Estudiantes</a> ›
+      <span>Time Blocking semanal</span>
+    </div>
+    <span class="hero-emoji">🗓️</span>
+    <span class="tag hero-tag">Estudiantes · Organización</span>
+    <h1>Time Blocking semanal</h1>
+    <p class="lead">Divide tu semana en bloques de 45 minutos por materia, duerme bien y llega descansado a los exámenes — sin estudiar de madrugada.</p>
+    <div style="display:flex;gap:.9rem;flex-wrap:wrap;">
+      <a href="index.html#audiencias" class="btn btn-back">← Volver</a>
+      <a href="index.html#contacto" class="btn btn-primary">Pedir apoyo personalizado</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="tag" style="background:rgba(26,74,58,.1);color:#1a4a3a;">¿Qué es?</span>
+    <h2>El secreto de los estudiantes organizados</h2>
+    <p>El Time Blocking consiste en asignar bloques de tiempo específicos a tareas específicas en tu agenda semanal. No es hacer una lista de tareas (eso no funciona): es decidir exactamente cuándo vas a hacer cada cosa. Los estudios de psicología cognitiva muestran que esta técnica reduce el estrés y aumenta la productividad en un 40%.</p>
+    <div class="highlight"><p>"No se trata de estudiar más horas. Se trata de saber exactamente qué estudiarás en cada hora — y cumplirlo."</p></div>
+    <div class="links-grid">
+      <div class="link-card"><span class="lc-icon">📄</span><h3>Planificador semanal imprimible</h3><p>Descarga una plantilla de time blocking adaptada para estudiantes de secundaria.</p><a href="https://www.google.com/search?q=planificador+semanal+estudiante+secundaria+pdf+gratis" target="_blank" rel="noopener">Buscar plantilla →</a></div>
+      <div class="link-card"><span class="lc-icon">📱</span><h3>Google Calendar (gratis)</h3><p>Crea tu time blocking digital en Google Calendar con colores por materia. Sincroniza con tu celular.</p><a href="https://calendar.google.com" target="_blank" rel="noopener">calendar.google.com →</a></div>
+      <div class="link-card"><span class="lc-icon">⏱️</span><h3>Técnica Pomodoro</h3><p>Combina el time blocking con sesiones de 25 minutos de estudio + 5 de descanso para máxima concentración.</p><a href="https://pomofocus.io" target="_blank" rel="noopener">pomofocus.io →</a></div>
+    </div>
+  </div>
+</section>
+<section class="section section-alt">
+  <div class="container">
+    <span class="tag" style="background:rgba(201,136,42,.12);color:var(--terra);">Cómo construir tu horario</span>
+    <h2>De 0 a planificado en 30 minutos (los domingos)</h2>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-body"><h3>Inventaría lo que tienes que hacer</h3><p>Escribe todo: tareas pendientes, exámenes de la semana, actividades extracurriculares, compromisos familiares. No ordenes aún — solo vacía tu cabeza al papel. Esto solo ya reduce la ansiedad.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-body"><h3>Identifica tus bloques disponibles</h3><p>En tu plantilla semanal, marca primero los bloques que NO son negociables: clases, comidas, sueño (8 horas mínimo), deporte. Lo que queda son tus bloques de estudio disponibles.</p></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-body"><h3>Asigna tareas a bloques (45 min cada uno)</h3><p>Pon una sola materia por bloque. No pongas "estudiar" — pon "matemáticas: ejercicios 5 al 10 del libro". Cuanto más específico, más fácil empezar. Asigna primero los exámenes más cercanos y las tareas con fecha límite.</p></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-body"><h3>La regla del bloque comodín</h3><p>Deja un bloque libre cada día como "comodín" para lo imprevisto: una tarea que olvidaste, un ejercicio que tomó más tiempo, o simplemente descansar. Si no lo usas, es tiempo libre ganado.</p></div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-body"><h3>Revisa el viernes (5 minutos)</h3><p>¿Qué cumpliste? ¿Qué no? No te juzgues — ajusta para la semana siguiente. El objetivo no es la perfección, es mejorar un 1% cada semana durante todo el año.</p></div></div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <span class="tag" style="background:rgba(27,58,92,.1);color:var(--inca-blue);">Reglas de oro</span>
+    <h2>Para que el sistema funcione de verdad</h2>
+    <div class="tips">
+      <div class="tip"><span class="tip-icon">📵</span><p><strong>Celular en modo avión:</strong> durante el bloque de estudio, el celular en modo avión o en otra habitación. 1 notificación = 23 minutos de concentración perdida (estudios de Microsoft).</p></div>
+      <div class="tip"><span class="tip-icon">😴</span><p><strong>El sueño es sagrado:</strong> el cerebro consolida lo aprendido mientras duermes. Estudiar de madrugada destruye lo que estudiaste durante el día. 8 horas no son negociables.</p></div>
+      <div class="tip"><span class="tip-icon">🥤</span><p><strong>Agua y snacks saludables:</strong> el cerebro necesita hidratación para concentrarse. Agua o frutas durante el estudio — no azúcar refinada que da un pico y luego cansancio.</p></div>
+      <div class="tip"><span class="tip-icon">🎵</span><p><strong>Música sin letra:</strong> si necesitas música para estudiar, usa música instrumental (lo-fi, clásica, ambiental). La letra compite con el procesamiento del lenguaje en tu cerebro.</p></div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="container footer-inner">
+    <span>© 2025 CIPCA – Centro de Innovación Pedagógica Carlo Acutis · Perú</span>
+    <span>Servicio 100% voluntario y gratuito · <a href="index.html#contacto">Contacto</a></span>
+  </div>
+</footer>
+<script>
+document.getElementById('navBurger').addEventListener('click',()=>{
+  document.getElementById('navLinks').classList.toggle('open');
+});
+</script>
+</body>
+</html>

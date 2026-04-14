@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Canva for Education – CIPCA Carlo Acutis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+<style>
+
+:root{--gold:#C9882A;--gold-light:#E8B860;--terra:#A63D2F;--terra-deep:#7A2318;--inca-blue:#1B3A5C;--cream:#FDF6EC;--warm-white:#FFFBF4;--charcoal:#2A2119;--muted:#7A6A58;--radius:18px;--transition:0.35s cubic-bezier(0.4,0,0.2,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--warm-white);color:var(--charcoal);font-family:'Nunito',sans-serif;font-weight:400;line-height:1.75;overflow-x:hidden}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--cream)}::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
+.container{max-width:1080px;margin-inline:auto;padding-inline:1.5rem}
+a{color:var(--gold);text-decoration:none}a:hover{text-decoration:underline}
+h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.2}
+h2{font-size:clamp(1.7rem,3.5vw,2.5rem);color:var(--inca-blue);margin-bottom:1rem}
+h3{font-size:1.2rem;color:var(--inca-blue);margin-bottom:.5rem}
+p{margin-bottom:1rem;color:var(--charcoal)}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .9rem;border-radius:100px;margin-bottom:1rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.6rem;border-radius:100px;font-family:'Nunito',sans-serif;font-weight:700;font-size:.92rem;cursor:pointer;text-decoration:none;transition:var(--transition);border:none}
+.btn-primary{background:var(--gold);color:#fff;box-shadow:0 4px 18px rgba(201,136,42,.3)}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);text-decoration:none}
+.btn-back{background:rgba(27,58,92,.08);color:var(--inca-blue);border:1.5px solid rgba(27,58,92,.2)}
+.btn-back:hover{background:var(--inca-blue);color:#fff;text-decoration:none}
+nav{position:sticky;top:0;z-index:100;padding:.9rem 0;background:rgba(253,246,236,.93);backdrop-filter:blur(16px);border-bottom:1px solid rgba(201,136,42,.15);box-shadow:0 2px 16px rgba(42,33,25,.07)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none}
+.nav-logo-icon{width:38px;height:38px;border-radius:9px;background:linear-gradient(135deg,var(--terra),var(--gold));display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:#fff;font-weight:900;font-family:'Playfair Display',serif}
+.nav-logo-text{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--inca-blue);line-height:1.2}
+.nav-logo-text span{display:block;font-size:.68rem;font-weight:400;color:var(--muted);font-family:'Nunito',sans-serif}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{text-decoration:none;color:var(--charcoal);font-weight:600;font-size:.88rem;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.nav-burger span{width:24px;height:2px;background:var(--charcoal);border-radius:2px}
+/* HERO */
+.page-hero{padding:4rem 0 3rem;position:relative;overflow:hidden}
+.hero-emoji{font-size:4rem;display:block;margin-bottom:1rem;line-height:1}
+.page-hero h1{font-size:clamp(2rem,5vw,3.5rem);margin-bottom:1rem}
+.page-hero .lead{font-size:1.15rem;color:var(--muted);max-width:65ch;margin-bottom:1.75rem}
+.breadcrumb{font-size:.8rem;color:var(--muted);margin-bottom:1.5rem;display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
+.breadcrumb a{color:var(--muted);text-decoration:none}
+.breadcrumb a:hover{color:var(--gold)}
+/* SECTIONS */
+.section{padding:3.5rem 0}
+.section-alt{background:var(--cream)}
+.section-dark{background:linear-gradient(145deg,var(--inca-blue),#0E2440);color:#fff}
+.section-dark h2,.section-dark h3{color:var(--gold-light)}
+.section-dark p{color:rgba(255,255,255,.82)}
+.section-dark .step-num{background:var(--gold)}
+/* STEPS */
+.steps{display:flex;flex-direction:column;gap:1.5rem;margin-top:1.5rem}
+.step{display:flex;gap:1.25rem;align-items:flex-start;background:#fff;border-radius:var(--radius);padding:1.5rem;border:1.5px solid rgba(201,136,42,.1);transition:var(--transition)}
+.step:hover{border-color:var(--gold);box-shadow:0 6px 24px rgba(201,136,42,.12);transform:translateX(4px)}
+.step-num{width:42px;height:42px;border-radius:50%;background:var(--inca-blue);color:#fff;font-family:'Playfair Display',serif;font-weight:700;font-size:1.1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step-body h3{margin-bottom:.35rem}
+.step-body p{margin-bottom:0;font-size:.92rem;color:var(--muted)}
+/* LINKS */
+.links-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem;margin-top:1.5rem}
+.link-card{background:#fff;border-radius:var(--radius);padding:1.5rem;border:1.5px solid rgba(201,136,42,.12);transition:var(--transition)}
+.link-card:hover{border-color:var(--gold);box-shadow:0 6px 24px rgba(201,136,42,.14);transform:translateY(-4px)}
+.link-card .lc-icon{font-size:2rem;margin-bottom:.75rem;display:block}
+.link-card h3{font-size:1rem;margin-bottom:.4rem}
+.link-card p{font-size:.83rem;color:var(--muted);margin-bottom:.9rem}
+.link-card a{font-size:.82rem;font-weight:700;color:var(--gold)}
+/* TIPS */
+.tips{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.1rem;margin-top:1.5rem}
+.tip{background:#fff;border-radius:14px;padding:1.25rem;border-left:4px solid var(--gold)}
+.tip .tip-icon{font-size:1.5rem;margin-bottom:.5rem;display:block}
+.tip p{font-size:.87rem;color:var(--muted);margin-bottom:0}
+/* HIGHLIGHT BOX */
+.highlight{background:linear-gradient(135deg,rgba(201,136,42,.1),rgba(166,61,47,.08));border-radius:16px;padding:1.75rem;border:1.5px solid rgba(201,136,42,.2);margin:1.5rem 0}
+.highlight p{margin-bottom:0;font-style:italic;font-size:1rem;color:var(--inca-blue)}
+/* ILLUSTRATION placeholder */
+.illus{width:100%;border-radius:16px;overflow:hidden;margin:1.5rem 0;background:linear-gradient(145deg,var(--inca-blue),#0E2440);padding:2.5rem;text-align:center;color:rgba(255,255,255,.7);font-size:.88rem}
+.illus .big{font-size:4rem;display:block;margin-bottom:.5rem}
+/* FOOTER */
+footer{background:var(--charcoal);color:rgba(255,255,255,.6);padding:2rem 0;margin-top:0}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.82rem}
+.footer-inner a{color:var(--gold-light)}
+/* MOBILE */
+@media(max-width:768px){
+  .nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--cream);padding:1.5rem;gap:1.25rem;border-bottom:1px solid rgba(201,136,42,.2)}
+  .nav-links.open{display:flex}
+  .nav-burger{display:flex}
+  nav{position:relative}
+  .links-grid,.tips{grid-template-columns:1fr}
+}
+
+.page-hero{background:linear-gradient(145deg,#0E2440,#1B3A5C);}
+.hero-tag{background:#1B3A5C;color:#fff;}
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon">A</div>
+      <div class="nav-logo-text">CIPCA · Carlo Acutis<span>Centro de Innovación Pedagógica</span></div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#sobre">Sobre mí</a></li>
+      <li><a href="index.html#audiencias">¿Para quién?</a></li>
+      <li><a href="index.html#recursos">Recursos</a></li>
+      <li><a href="index.html#metodologia">Metodología</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+    <button class="nav-burger" id="navBurger" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Inicio</a> ›
+      <a href="index.html#audiencias">Docentes</a> ›
+      <span>Canva for Education</span>
+    </div>
+    <span class="hero-emoji">🎨</span>
+    <span class="tag hero-tag">Docentes · Herramienta digital</span>
+    <h1>Canva for Education</h1>
+    <p class="lead">Diseña fichas, infografías, presentaciones y evaluaciones visuales profesionales en minutos — completamente gratis para docentes verificados.</p>
+    <div style="display:flex;gap:.9rem;flex-wrap:wrap;">
+      <a href="index.html#audiencias" class="btn btn-back">← Volver</a>
+      <a href="index.html#contacto" class="btn btn-primary">Pedir apoyo personalizado</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="tag" style="background:rgba(27,58,92,.1);color:var(--inca-blue);">¿Qué es?</span>
+    <h2>Diseño sin saber diseñar</h2>
+    <p>Canva for Education es la versión gratuita y premium de Canva exclusiva para docentes y estudiantes. Ofrece más de 1 millón de plantillas, herramientas de colaboración en tiempo real y la posibilidad de crear clases, asignar tareas y corregir visualmente desde la misma plataforma.</p>
+    <div class="highlight"><p>"No se trata de hacer cosas bonitas: se trata de que tus alumnos comprendan mejor porque el material es claro, organizado y visualmente coherente."</p></div>
+    <div class="links-grid">
+      <div class="link-card"><span class="lc-icon">🌐</span><h3>Registrarse gratis</h3><p>Verifica tu cuenta docente con tu correo institucional y obtén acceso Premium sin costo.</p><a href="https://www.canva.com/education/" target="_blank" rel="noopener">canva.com/education →</a></div>
+      <div class="link-card"><span class="lc-icon">📺</span><h3>Tutorial oficial en español</h3><p>Video paso a paso: registro, navegación, plantillas para el aula y tareas para alumnos.</p><a href="https://www.youtube.com/results?search_query=canva+education+tutorial+español+docentes" target="_blank" rel="noopener">Ver en YouTube →</a></div>
+      <div class="link-card"><span class="lc-icon">📋</span><h3>Plantillas para secundaria</h3><p>Busca "infografía educativa", "ficha de trabajo", "presentación escolar" en la galería de Canva.</p><a href="https://www.canva.com/es_mx/plantillas/educacion/" target="_blank" rel="noopener">Ver plantillas →</a></div>
+    </div>
+  </div>
+</section>
+<section class="section section-alt">
+  <div class="container">
+    <span class="tag" style="background:rgba(201,136,42,.12);color:var(--terra);">Procedimiento paso a paso</span>
+    <h2>Cómo empezar en 20 minutos</h2>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-body"><h3>Crea tu cuenta docente gratuita</h3><p>Ve a canva.com/education, haz clic en "Consíguelo gratis", selecciona "Soy docente" e ingresa con tu correo Gmail o institucional. Canva verificará tu cuenta en 24–48 horas y te dará acceso Premium completo.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-body"><h3>Explora las plantillas educativas</h3><p>En el buscador escribe el tipo de material que necesitas: "ficha de lectura", "mapa conceptual", "rúbrica de evaluación", "infografía ciencias". Filtra por "Educación" para ver solo plantillas escolares.</p></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-body"><h3>Personaliza en 10 minutos</h3><p>Haz clic en cualquier texto para editarlo. Cambia colores con la paleta de tu institución. Sube el logo de tu IE. Reemplaza imágenes arrastrando fotos desde tu computadora o usando la biblioteca gratuita de Canva.</p></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-body"><h3>Crea una "Clase" con tus alumnos</h3><p>En el menú lateral, ve a "Educación" → "Crear una clase". Invita a tus alumnos con un código o enlace. Asigna una tarea creativa y ellos entregarán directamente en Canva — tú corriges con comentarios visuales.</p></div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-body"><h3>Descarga, imprime o comparte</h3><p>Exporta en PDF (alta resolución para imprimir), PNG (para proyectar) o comparte un enlace de solo visualización. Para presentaciones, usa el modo "Presentar" de Canva directamente desde el navegador, sin PowerPoint.</p></div></div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <span class="tag" style="background:rgba(27,58,92,.1);color:var(--inca-blue);">Ideas concretas</span>
+    <h2>10 usos inmediatos en el aula peruana</h2>
+    <div class="tips">
+      <div class="tip"><span class="tip-icon">📊</span><p><strong>Infografía de unidad:</strong> resume los conceptos clave de toda una unidad en una sola hoja visual — los alumnos la usan de guía de estudio.</p></div>
+      <div class="tip"><span class="tip-icon">🎯</span><p><strong>Rúbrica visual:</strong> diseña la rúbrica de evaluación en Canva con colores por nivel — los alumnos entienden exactamente qué se espera de ellos.</p></div>
+      <div class="tip"><span class="tip-icon">📰</span><p><strong>Periódico mural digital:</strong> cada equipo crea una página del periódico sobre un tema de la unidad y lo presentan en clase.</p></div>
+      <div class="tip"><span class="tip-icon">📖</span><p><strong>Ficha de vocabulario:</strong> palabra + definición + imagen + ejemplo en oración — ideal para Comunicación e idiomas.</p></div>
+      <div class="tip"><span class="tip-icon">🗺️</span><p><strong>Línea de tiempo:</strong> plantillas de timeline para Historia, Arte y Ciencias que los alumnos rellenan como actividad de cierre.</p></div>
+      <div class="tip"><span class="tip-icon">📝</span><p><strong>Portada de portafolio:</strong> cada alumno diseña la portada de su portafolio de evidencias — les da orgullo y sentido de autoría.</p></div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="container footer-inner">
+    <span>© 2025 CIPCA – Centro de Innovación Pedagógica Carlo Acutis · Perú</span>
+    <span>Servicio 100% voluntario y gratuito · <a href="index.html#contacto">Contacto</a></span>
+  </div>
+</footer>
+<script>
+document.getElementById('navBurger').addEventListener('click',()=>{
+  document.getElementById('navLinks').classList.toggle('open');
+});
+</script>
+</body>
+</html>

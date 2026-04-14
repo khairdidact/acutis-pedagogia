@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Rincón de Estudio con S/.30 – CIPCA Carlo Acutis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+<style>
+
+:root{--gold:#C9882A;--gold-light:#E8B860;--terra:#A63D2F;--terra-deep:#7A2318;--inca-blue:#1B3A5C;--cream:#FDF6EC;--warm-white:#FFFBF4;--charcoal:#2A2119;--muted:#7A6A58;--radius:18px;--transition:0.35s cubic-bezier(0.4,0,0.2,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--warm-white);color:var(--charcoal);font-family:'Nunito',sans-serif;font-weight:400;line-height:1.75;overflow-x:hidden}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--cream)}::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
+.container{max-width:1080px;margin-inline:auto;padding-inline:1.5rem}
+a{color:var(--gold);text-decoration:none}a:hover{text-decoration:underline}
+h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.2}
+h2{font-size:clamp(1.7rem,3.5vw,2.5rem);color:var(--inca-blue);margin-bottom:1rem}
+h3{font-size:1.2rem;color:var(--inca-blue);margin-bottom:.5rem}
+p{margin-bottom:1rem;color:var(--charcoal)}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .9rem;border-radius:100px;margin-bottom:1rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.6rem;border-radius:100px;font-family:'Nunito',sans-serif;font-weight:700;font-size:.92rem;cursor:pointer;text-decoration:none;transition:var(--transition);border:none}
+.btn-primary{background:var(--gold);color:#fff;box-shadow:0 4px 18px rgba(201,136,42,.3)}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);text-decoration:none}
+.btn-back{background:rgba(27,58,92,.08);color:var(--inca-blue);border:1.5px solid rgba(27,58,92,.2)}
+.btn-back:hover{background:var(--inca-blue);color:#fff;text-decoration:none}
+nav{position:sticky;top:0;z-index:100;padding:.9rem 0;background:rgba(253,246,236,.93);backdrop-filter:blur(16px);border-bottom:1px solid rgba(201,136,42,.15);box-shadow:0 2px 16px rgba(42,33,25,.07)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none}
+.nav-logo-icon{width:38px;height:38px;border-radius:9px;background:linear-gradient(135deg,var(--terra),var(--gold));display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:#fff;font-weight:900;font-family:'Playfair Display',serif}
+.nav-logo-text{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--inca-blue);line-height:1.2}
+.nav-logo-text span{display:block;font-size:.68rem;font-weight:400;color:var(--muted);font-family:'Nunito',sans-serif}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{text-decoration:none;color:var(--charcoal);font-weight:600;font-size:.88rem;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.nav-burger span{width:24px;height:2px;background:var(--charcoal);border-radius:2px}
+/* HERO */
+.page-hero{padding:4rem 0 3rem;position:relative;overflow:hidden}
+.hero-emoji{font-size:4rem;display:block;margin-bottom:1rem;line-height:1}
+.page-hero h1{font-size:clamp(2rem,5vw,3.5rem);margin-bottom:1rem}
+.page-hero .lead{font-size:1.15rem;color:var(--muted);max-width:65ch;margin-bottom:1.75rem}
+.breadcrumb{font-size:.8rem;color:var(--muted);margin-bottom:1.5rem;display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
+.breadcrumb a{color:var(--muted);text-decoration:none}
+.breadcrumb a:hover{color:var(--gold)}
+/* SECTIONS */
+.section{padding:3.5rem 0}
+.section-alt{background:var(--cream)}
+.section-dark{background:linear-gradient(145deg,var(--inca-blue),#0E2440);color:#fff}
+.section-dark h2,.section-dark h3{color:var(--gold-light)}
+.section-dark p{color:rgba(255,255,255,.82)}
+.section-dark .step-num{background:var(--gold)}
+/* STEPS */
+.steps{display:flex;flex-direction:column;gap:1.5rem;margin-top:1.5rem}
+.step{display:flex;gap:1.25rem;align-items:flex-start;background:#fff;border-radius:var(--radius);padding:1.5rem;border:1.5px solid rgba(201,136,42,.1);transition:var(--transition)}
+.step:hover{border-color:var(--gold);box-shadow:0 6px 24px rgba(201,136,42,.12);transform:translateX(4px)}
+.step-num{width:42px;height:42px;border-radius:50%;background:var(--inca-blue);color:#fff;font-family:'Playfair Display',serif;font-weight:700;font-size:1.1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step-body h3{margin-bottom:.35rem}
+.step-body p{margin-bottom:0;font-size:.92rem;color:var(--muted)}
+/* LINKS */
+.links-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem;margin-top:1.5rem}
+.link-card{background:#fff;border-radius:var(--radius);padding:1.5rem;border:1.5px solid rgba(201,136,42,.12);transition:var(--transition)}
+.link-card:hover{border-color:var(--gold);box-shadow:0 6px 24px rgba(201,136,42,.14);transform:translateY(-4px)}
+.link-card .lc-icon{font-size:2rem;margin-bottom:.75rem;display:block}
+.link-card h3{font-size:1rem;margin-bottom:.4rem}
+.link-card p{font-size:.83rem;color:var(--muted);margin-bottom:.9rem}
+.link-card a{font-size:.82rem;font-weight:700;color:var(--gold)}
+/* TIPS */
+.tips{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.1rem;margin-top:1.5rem}
+.tip{background:#fff;border-radius:14px;padding:1.25rem;border-left:4px solid var(--gold)}
+.tip .tip-icon{font-size:1.5rem;margin-bottom:.5rem;display:block}
+.tip p{font-size:.87rem;color:var(--muted);margin-bottom:0}
+/* HIGHLIGHT BOX */
+.highlight{background:linear-gradient(135deg,rgba(201,136,42,.1),rgba(166,61,47,.08));border-radius:16px;padding:1.75rem;border:1.5px solid rgba(201,136,42,.2);margin:1.5rem 0}
+.highlight p{margin-bottom:0;font-style:italic;font-size:1rem;color:var(--inca-blue)}
+/* ILLUSTRATION placeholder */
+.illus{width:100%;border-radius:16px;overflow:hidden;margin:1.5rem 0;background:linear-gradient(145deg,var(--inca-blue),#0E2440);padding:2.5rem;text-align:center;color:rgba(255,255,255,.7);font-size:.88rem}
+.illus .big{font-size:4rem;display:block;margin-bottom:.5rem}
+/* FOOTER */
+footer{background:var(--charcoal);color:rgba(255,255,255,.6);padding:2rem 0;margin-top:0}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.82rem}
+.footer-inner a{color:var(--gold-light)}
+/* MOBILE */
+@media(max-width:768px){
+  .nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--cream);padding:1.5rem;gap:1.25rem;border-bottom:1px solid rgba(201,136,42,.2)}
+  .nav-links.open{display:flex}
+  .nav-burger{display:flex}
+  nav{position:relative}
+  .links-grid,.tips{grid-template-columns:1fr}
+}
+
+.page-hero{background:linear-gradient(145deg,#3A2A0A,#7A5A1A);}
+.hero-tag{background:#3A2A0A;color:#fff;}
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon">A</div>
+      <div class="nav-logo-text">CIPCA · Carlo Acutis<span>Centro de Innovación Pedagógica</span></div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#sobre">Sobre mí</a></li>
+      <li><a href="index.html#audiencias">¿Para quién?</a></li>
+      <li><a href="index.html#recursos">Recursos</a></li>
+      <li><a href="index.html#metodologia">Metodología</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+    <button class="nav-burger" id="navBurger" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Inicio</a> ›
+      <a href="index.html#audiencias">Padres y Madres</a> ›
+      <span>Rincón de estudio con S/.30</span>
+    </div>
+    <span class="hero-emoji">🏠</span>
+    <span class="tag hero-tag">Padres y Madres · Entorno de aprendizaje</span>
+    <h1>Rincón de estudio con S/.30</h1>
+    <p class="lead">Organiza cualquier espacio en casa con buena luz, sin ruido y con materiales a mano para que estudiar se convierta en un hábito natural.</p>
+    <div style="display:flex;gap:.9rem;flex-wrap:wrap;">
+      <a href="index.html#audiencias" class="btn btn-back">← Volver</a>
+      <a href="index.html#contacto" class="btn btn-primary">Pedir apoyo personalizado</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="tag" style="background:rgba(58,42,10,.1);color:#3A2A0A;">¿Por qué el entorno importa?</span>
+    <h2>El espacio de estudio es el primer mensaje</h2>
+    <p>La neurociencia educativa es clara: el entorno físico influye directamente en la capacidad de concentración y la disposición para el aprendizaje. Un espacio dedicado al estudio — aunque sea un rincón de 1 metro cuadrado en el comedor — le dice al cerebro del adolescente: "aquí es donde me concentro". No necesitas dinero. Necesitas organización.</p>
+    <div class="highlight"><p>"No es el espacio lo que hace al estudiante — es el hábito. Y el hábito se construye con un lugar fijo, una hora fija y un ritual fijo."</p></div>
+    <div class="links-grid">
+      <div class="link-card"><span class="lc-icon">💡</span><h3>Iluminación correcta</h3><p>La luz LED blanca fría (6000K) está comprobada para aumentar la concentración. Un foco LED de S/.5 en el bazar puede transformar el espacio.</p><a href="https://www.google.com/search?q=importancia+iluminacion+estudio+estudiantes+luz+fria+calida" target="_blank" rel="noopener">Leer más →</a></div>
+      <div class="link-card"><span class="lc-icon">🎵</span><h3>Ruido blanco para concentrarse</h3><p>Si hay ruido en casa, el ruido blanco (lluvia, ventilador) neutraliza las distracciones. Busca "white noise" en YouTube o Spotify — gratis.</p><a href="https://www.youtube.com/results?search_query=ruido+blanco+para+estudiar+concentracion" target="_blank" rel="noopener">Ver en YouTube →</a></div>
+    </div>
+  </div>
+</section>
+<section class="section section-alt">
+  <div class="container">
+    <span class="tag" style="background:rgba(201,136,42,.12);color:var(--terra);">Lista de materiales</span>
+    <h2>El rincón perfecto por menos de S/.30</h2>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-body"><h3>La superficie: cualquier mesa firme</h3><p>No necesitas escritorio especial. La mesa del comedor, una tabla sobre dos cajas, o una mesa plegable de mercado (S/.25–35 en Gamarra o mercados locales) funcionan perfectamente. Lo importante: que tenga espacio suficiente para el cuaderno + libro abiertos simultáneamente.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-body"><h3>La luz: S/.5 cambia todo</h3><p>Un foco LED de luz blanca fría (no amarilla) conectado a una extensión posicionada sobre la mesa. La luz debe llegar desde el lado izquierdo del estudiante (o desde arriba) para no crear sombra al escribir. Sin esto, estudiar genera cansancio visual rápido.</p></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-body"><h3>Los materiales organizados en la mesa</h3><p>Una botella de agua siempre presente. Los cuadernos y libros del día siguiente, preparados la noche anterior. Una cajita de lápices, bolígrafos y corrector. Nada más — la mesa despejada reduce la distracción visual y el tiempo de "preparación mental" para empezar.</p></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-body"><h3>La regla del "rincón solo para estudiar"</h3><p>Si el espacio disponible lo permite, que ese rincón no se use para otras actividades. El cerebro crea asociaciones espaciales: si siempre se estudia ahí, al sentarse en ese lugar el cerebro automáticamente pasa a "modo estudio" con menos esfuerzo voluntario.</p></div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-body"><h3>El ritual de inicio de 2 minutos</h3><p>Antes de empezar a estudiar: ordenar la mesa, colocar los materiales del día, beber un vaso de agua y leer en voz alta lo que se va a estudiar hoy. Este ritual de 2 minutos es la señal que el cerebro necesita para pasar del "modo descanso" al "modo aprendizaje".</p></div></div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <span class="tag" style="background:rgba(27,58,92,.1);color:var(--inca-blue);">Pequeños detalles que hacen la diferencia</span>
+    <h2>El ambiente óptimo de aprendizaje</h2>
+    <div class="tips">
+      <div class="tip"><span class="tip-icon">🌡️</span><p><strong>Temperatura:</strong> el cerebro rinde mejor entre 20–22°C. Si hace calor, un ventilador; si frío, abrigo antes de sentarse. El malestar físico destruye la concentración.</p></div>
+      <div class="tip"><span class="tip-icon">🪴</span><p><strong>Una planta pequeña:</strong> estudios de la Universidad de Exeter muestran que la presencia de plantas aumenta la productividad en un 15%. Una plantita de S/.3 del mercado puede ayudar.</p></div>
+      <div class="tip"><span class="tip-icon">📵</span><p><strong>El celular en otra habitación:</strong> solo tenerlo en la mesa (aunque esté apagado) reduce la capacidad cognitiva disponible. La mente "anticipa" la notificación.</p></div>
+      <div class="tip"><span class="tip-icon">🍎</span><p><strong>Snack saludable antes:</strong> fruta, maní o pan integral antes de estudiar. El cerebro usa glucosa — pero el azúcar refinado da un pico seguido de cansancio. La fruta da energía sostenida.</p></div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="container footer-inner">
+    <span>© 2025 CIPCA – Centro de Innovación Pedagógica Carlo Acutis · Perú</span>
+    <span>Servicio 100% voluntario y gratuito · <a href="index.html#contacto">Contacto</a></span>
+  </div>
+</footer>
+<script>
+document.getElementById('navBurger').addEventListener('click',()=>{
+  document.getElementById('navLinks').classList.toggle('open');
+});
+</script>
+</body>
+</html>
